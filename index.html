@@ -2,14 +2,18 @@
 <html>
 <head>
     <title>mushroom mania</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body ng-app = 'app'>
   
+  
   <h1>mushroom mania</h1>
+  <img src="mushroom.png">
 
-  <input ng-model="mushSearch">
+  <input ng-model="mushSearch" placeholder="search description...">
     <input type="radio" ng-model="edible" value="false">poisonous
     <input type="radio" ng-model="edible" value="true">non-poisonus
+
   <div ng-controller="MushController">
     <ul>
       <li ng-repeat="mush in mushList | filter: {description:mushSearch} | filter: edible">
